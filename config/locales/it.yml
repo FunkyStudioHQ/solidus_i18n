@@ -11,10 +11,10 @@ it:
         spree/fulfilment_changer:
           attributes:
             desired_shipment:
-              can_not_transfer_within_same_shipment: can not be same as current shipment
+              can_not_transfer_within_same_shipment: non può essere uguale alla spedizione corrente
               not_enough_stock_at_desired_location: not enough stock in desired stock location
             current_shipment:
-              has_already_been_shipped: has already been shipped
+              has_already_been_shipped: è già stato spedito
               can_not_have_backordered_inventory_units: has backordered inventory units
   activerecord:
     attributes:
@@ -35,7 +35,7 @@ it:
         state: Stato
         adjustment_reason_id: Ragione
       spree/adjustment_reason:
-        active: Active
+        active: Attivo
         code: Codice
         name: Nome
         state: Stato
@@ -80,14 +80,14 @@ it:
         alt: Testo Alternativo
         attachment: Nome File
       spree/inventory_unit:
-        state: State
+        state: Stato
       spree/legacy_user:
         email: Email
         password: Password
-        password_confirmation: Password Confirmation
+        password_confirmation: Conferma Password
         spree_roles: Ruoli
       spree/line_item:
-        description: Item Description
+        description: Descrizione Articolo
         name: Nome
         price: Prezzo
         quantity: Quantità
@@ -99,12 +99,12 @@ it:
         name: Nome
         presentation: Presentazione
       spree/order:
-        additional_tax_total: Tax
-        approved_at: Approved at
-        approver_id: Approver
-        canceled_at: Canceled at
-        canceler_id: Canceler
-        checkout_complete: Checkout Complete
+        additional_tax_total: Tassazione
+        approved_at: Approvato il
+        approver_id: Approvato da
+        canceled_at: Cancellato il
+        canceler_id: Cancellato da
+        checkout_complete: Checkout Completo
         completed_at: Completato il
         coupon_code: Codice Coupon
         created_at: Data Ordine
@@ -115,38 +115,38 @@ it:
         number: Numero
         payment_state: Stato Pagamento
         shipment_state: Stato Spedizione
-        shipment_total: Ship Total
-        special_instructions: Special Instructions
+        shipment_total: Tot. Spedizione
+        special_instructions: Istruzioni Speciali
         state: Stato
         total: Totale
-        considered_risky: Risky
+        considered_risky: A Rischio
       spree/order/bill_address:
-        address1: Billing address street
-        city: Billing address city
-        firstname: Billing address first name
-        lastname: Billing address last name
-        phone: Billing address phone
-        state: Billing address state
-        zipcode: Billing address zipcode
+        address1: Indirizzo  (fatturazione)
+        city: Città (fatturazione)
+        firstname: Nome (fatturazione)
+        lastname: Cognome (fatturazione)
+        phone: Telefono (fatturazione)
+        state: Regione (fatturazione)
+        zipcode: CAP (fatturazione)
       spree/order/ship_address:
-        address1: Shipping address street
-        city: Shipping address city
-        firstname: Shipping address first name
-        lastname: Shipping address last name
-        phone: Shipping address phone
-        state: Shipping address state
-        zipcode: Shipping address zipcode
+        address1: Indirizzo  (spedizione)
+        city: Città (spedizione)
+        firstname: Nome (spedizione)
+        lastname: Cognome (spedizione)
+        phone: Telefono (spedizione)
+        state: Regione (spedizione)
+        zipcode: CAP (spedizione)
       spree/payment:
         amount: Importo
-        created_at: Date/Time
-        number: Identifier
-        response_code: Transaction ID
-        state: State
+        created_at: Data/Ora
+        number: ID
+        response_code: ID Transazione
+        state: Stato
       spree/payment_method:
         active: Attivo
-        auto_capture: Auto Capture
+        auto_capture: Riscossione automatica
         description: Descrizione
-        display_on: Display
+        display_on: Visualizza
         name: Nome
         preference_source: Preference Source
         type: Tipologia
@@ -155,8 +155,8 @@ it:
         amount: Prezzo
         is_default: Currently Valid
       spree/product:
-        available_on: Available On
-        cost_currency: Cost Valuta
+        available_on: Disponibile dal
+        cost_currency: Costo Valuta
         cost_price: Prezzo di Costo
         description: Descrizione
         depth: Profondità
@@ -175,17 +175,17 @@ it:
         weight: Peso
         width: Larghezza
       spree/product_property:
-        value: Value
+        value: Valore
       spree/promotion:
-        apply_automatically: Apply Automatically
+        apply_automatically: Applica Automaticamente
         code: Codice
         description: Descrizione
-        event_name: Event Nome
+        event_name: Nome evento
         expires_at: Termina il
         name: Nome
-        path: Path
+        path: Percorso
         per_code_usage_limit: Per code usage limit
-        promotion_uses: Promozione Uses
+        promotion_uses: Utilizzi Promozione
         starts_at: Inizia il
         status: Status
         usage_limit: Limite di Utilizzo
@@ -196,23 +196,23 @@ it:
       spree/promotion/actions/create_quantity_adjustments:
         description: Creates an adjustment on a line item based on quantity
       spree/promotion/actions/free_shipping:
-        description: Makes all shipments for the order free
+        description: Annulla spese di spedizione per l'ordine
       spree/promotion/rules/item_total:
-        description: Order total meets these criteria
+        description: Il totale dell'ordine soddisfa questi criteri
       spree/promotion/rules/first_order:
-        description: Must be the customer's first order
+        description: Deve essere il primo ordine del cliente
       spree/promotion/rules/landing_page:
-          description: Customer must have visited the specified page
+          description: Il cliente deve aver visitato la pagina specificata
       spree/promotion/rules/one_use_per_user:
         description: Only One Use Per User
       spree/promotion/rules/option_value:
         description: Order includes specified product(s) with matching option value(s)
       spree/promotion/rules/product:
-        description: Order includes specified product(s)
+        description: L'ordine include i prodotti specificati
       spree/promotion/rules/user:
-        description: Available only to the specified users
+        description: Disponibile solo per gli utenti specificati
       spree/promotion/rules/user_logged_in:
-        description: Available only to logged in users
+        description: Disponibile solo per gli utenti registrati
       spree/promotion/rules/taxon:
         description: Order includes products with specified taxon(s)
       spree/promotion/rules/nth_order:
@@ -220,11 +220,11 @@ it:
         form_text: "Apply this promotion on the users Nth order: "
       spree/promotion/rules/first_repeat_purchase_since:
         description: Available only to user who have not purchased in a while
-        form_text: "Apply this promotion to users whose last order was more than X days ago: "
+        form_text: "Applica questa promozione agli tutti gli utenti con ultimo ordine effettuato da più di X giorni: "
       spree/promotion/rules/user_role:
         description: Order includes User with specified Role(s)
       spree/promotion/rules/store:
-        description: Available only to the specified stores
+        description: Disponibile solo per i negozi specificati
       spree/promotion_category:
         name: Nome
       spree/property:
@@ -235,66 +235,66 @@ it:
         description: Descrizione
         refund_reason_id: Ragione
       spree/refund_reason:
-        active: Active
+        active: Attivo
         name: Nome
         code: Codice
       spree/reimbursement:
-        created_at: "Date/Time"
-        number: Number
-        reimbursement_status: Status
-        total: Total
+        created_at: "Data/Ora"
+        number: Numero
+        reimbursement_status: Stato
+        total: Totale
       spree/reimbursement/credit:
         amount: Importo
       spree/reimbursement_type:
         name: Nome
-        type: Type
-        created_at: "Date/Time"
+        type: Tipologia
+        created_at: "Data/Ora"
       spree/return_authorization:
         amount: Importo
         pre_tax_total: Pre-Tax Total
-        total_excluding_vat: Pre-Tax Total
+        total_excluding_vat: I.V.A. esclusa
       spree/return_item:
-        acceptance_status: Acceptance status
-        acceptance_status_errors: Acceptance errors
+        acceptance_status: Stato Accettazione
+        acceptance_status_errors: Errori Accettazione
         amount: Importo Before Sales Tax
-        charged: Charged
+        charged: Addebitato
         exchange_variant: Exchange for
-        inventory_unit_state: State
-        item_received?: "Item Received?"
+        inventory_unit_state: Stato
+        item_received?: "Articolo Ricevuto?"
         override_reimbursement_type_id: Rimborso Type Override
-        preferred_reimbursement_type_id: Preferred Rimborso Type
-        reception_status: Reception Status
+        preferred_reimbursement_type_id: Tipologia Preferita di Rimborso
+        reception_status: Status Ricezione
         resellable: "Resellable?"
         return_reason: Ragione
-        total: Total
+        total: Totale
       spree/return_reason:
         name: Nome
-        active: Active
-        created_at: "Date/Time"
+        active: Attivo
+        created_at: "Data/Ora"
         memo: Memo
-        number: RMA Number
-        state: State
+        number: Numero RMA
+        state: Stato
       spree/role:
         name: Nome
       spree/shipping_category:
         name: Nome
       spree/shipment:
-        tracking: Tracking Number
+        tracking: Codice Tracciamento
       spree/shipping_method:
-        admin_name: Internal Nome
-        carrier: Carrier
+        admin_name: Nome Interno
+        carrier: Corriere
         code: Codice
         display_on: Display
         name: Nome
         service_level: Service Level
-        tracking_url: Tracking URL
+        tracking_url: URL Tracciamento
       spree/shipping_rate:
         label: Etichetta
-        tax_rate: Tax Rate
-        shipping_rate: Shipping Rate
+        tax_rate: Aliquota
+        shipping_rate: Tariffa di spedizione
         amount: Importo
       spree/state:
-        abbr: Abbreviation
+        abbr: Abbreviazione
         name: Nome
       spree/store:
         url: URL Sito
@@ -304,77 +304,77 @@ it:
         seo_title: Seo Title
         name: Nome Sito
         mail_from_address: Mittente
-        cart_tax_country_iso: Tax Country for Empty Carts
+        cart_tax_country_iso: Tax Nazione for Empty Carts
         available_locales: Lingue Disponibili
         code: Codice
         default_currency: Valuta di Default
       spree/store_credit:
         amount: Importo
-        amount_authorized: Importo Authorized
-        amount_credited: Importo Credited
-        amount_used: Importo Used
-        category_id: Credit Type
-        created_at: Issued On
-        created_by_id: Created By
-        invalidated_at: Invalidated
+        amount_authorized: Importo Autorizzato
+        amount_credited: Importo Accreditato
+        amount_used: Importo usato
+        category_id: Tipologia
+        created_at: Rilasciato
+        created_by_id: Creato da
+        invalidated_at: Invalidato il
         memo: Memo
       spree/store_credit_event:
-        action: Action
-        amount_remaining: Total Unused
-        user_total_amount: Total Importo
+        action: Azione
+        amount_remaining: Totale Utilizzato
+        user_total_amount: Importo Totale
       spree/store_credit_update_reason:
         name: Ragione For Updating
       spree/stock_item:
-        count_on_hand: Count On Hand
+        count_on_hand: Disponibilità
       spree/stock_location:
-        admin_name: Internal Nome
-        active: Active
+        admin_name: Nome Interno
+        active: Attivo
         address1: Indirizzo
-        address2: Indirizzo (cont'd)
-        backorderable_default: Backorderable default
+        address2: Indirizzo (agg.)
+        backorderable_default: Ordinabile di default
         check_stock_on_transfer: Check stock on transfer
         city: Città
         code: Codice
         country_id: Nazione
         default: Default
         fulfillable: Fulfillable
-        internal_name: Internal Nome
+        internal_name: Nome Interno
         name: Nome
         phone: Telefono
-        propagate_all_variants: Propagate all variants
+        propagate_all_variants: Propaga a tutte le varianti
         restock_inventory: Restock Inventory
-        state_id: State
+        state_id: Stato
         zipcode: CAP
       spree/stock_movement:
-        originated_by: Originated By
+        originated_by: Originato da
         quantity: Quantità
-        variant: Variant
+        variant: Variante
       spree/tax_category:
         description: Descrizione
         name: Nome
         is_default: Default
-        tax_code: Tax Codice
+        tax_code: Codice Tassazione
       spree/tax_rate:
-        amount: Rate
-        included_in_price: Included In Price
+        amount: Importo
+        included_in_price: Incluso nel prezzo
         name: Nome
         show_rate_in_label: Show Rate In Etichetta
-        starts_at: Start date
-        expires_at: Expiration date
+        starts_at: Inizia il
+        expires_at: Data di scadenza
       spree/taxon:
         description: Descrizione
-        icon: Icon
+        icon: Icona
         meta_description: Meta Description
         meta_keywords: Meta Keywords
         meta_title: Meta Title
         name: Nome
         permalink: Permalink
-        position: Position
+        position: Positione
       spree/taxonomy:
         name: Nome
       spree/tracker:
         analytics_id: Analytics ID
-        active: Active
+        active: Attivo
       spree/user:
         email: Email
         password: Password
@@ -382,11 +382,11 @@ it:
         spree_roles: Ruoli
         lifetime_value: Totale speso
       spree/variant:
-        cost_currency: Cost Valuta
-        cost_price: Cost Price
-        depth: Depth
-        height: Height
-        price: Price
+        cost_currency: Costo Valuta
+        cost_price: Prezzo di Costo
+        depth: Profondità
+        height: Altezza
+        price: Prezzo
         sku: SKU
         tax_category: Variant tax category
         weight: Peso
@@ -400,7 +400,7 @@ it:
         one: User
         other: Utenti
       spree/address:
-        one: Address
+        one: Indirizzo
         other: Addresses
       spree/adjustment:
         one: Variazione
@@ -412,23 +412,23 @@ it:
         one: Base Calculator
         other: Base Calculators
       spree/calculator/default_tax:
-        one: Default Tax
-        other: Default Tax
+        one: Tassazione Default
+        other: Tassazioni Default
       spree/calculator/distributed_amount:
         one: Distributed Importo
         other: Distributed Importo
       spree/calculator/flat_percent_item_total:
-        one: Flat Percent
-        other: Flat Percent
+        one: Percentuale fissa
+        other: Percentuale fissa
       spree/calculator/flat_rate:
-        one: Flat Rate
-        other: Flat Rate
+        one: Tariffa fisso
+        other: Tariffa fisso
       spree/calculator/flexi_rate:
-        one: Flexible Rate
-        other: Flexible Rate
+        one: Tariffa Flessibile
+        other: Tariffa Flessibile
       spree/calculator/free_shipping:
-        one: Free Shipping
-        other: Free Shipping
+        one: Spedizione Gratuita
+        other: Spedizione Gratuita
       spree/calculator/percent_on_line_item:
         one: Percent Per Item
         other: Percent Per Item
@@ -436,14 +436,14 @@ it:
         one: Percent Per Item
         other: Percent Per Item
       spree/calculator/price_sack:
-        one: Price Sack
-        other: Price Sack
+        one: Prezzo imballaggio
+        other: Prezzo imballaggio
       spree/calculator/tiered_percent:
-        one: Tiered Percent
-        other: Tiered Percent
+        one: Percentuale a livelli
+        other: Percentuale a livelli
       spree/calculator/tiered_flat_rate:
-        one: Tiered Flat Rate
-        other: Tiered Flat Rate
+        one: Tariffa fissa a più livelli
+        other: Tariffa fissa a più livelli
       spree/calculator/returns/default_refund_amount:
         one: Default Refund Importo
         other: Default Refund Importo
@@ -469,8 +469,8 @@ it:
         one: Carta di Credito
         other: Carte di Credito
       spree/customer_return:
-        one: Customer Return
-        other: Customer Returns
+        one: Reso Cliente
+        other: Resi Cliente
       spree/exchange:
         one: Exchange
         other: Exchanges
@@ -552,8 +552,8 @@ it:
         one: Proprietà
         other: Proprietà
       spree/refund:
-        one: Refund
-        other: Refunds
+        one: Rimborso
+        other: Rimborsi
       spree/refund_reason:
         one: Refund Ragione
         other: Refund Ragioni
@@ -561,8 +561,8 @@ it:
         one: Rimborso
         other: Rimborsi
       spree/reimbursement_type:
-        one: Rimborso Type
-        other: Rimborso Types
+        one: Tipologia Rimborso
+        other: Tipologie Rimborsi
       spree/return_authorization:
         one: Return Authorization
         other: Return Authorizations
@@ -589,8 +589,8 @@ it:
         one: Stock Item
         other: Stock Items
       spree/stock_movement:
-        one: Stock Movement
-        other: Stock Movements
+        one: Movimento di Magazzino
+        other: Movimenti di Magazzino
       spree/stock_location:
         one: Magazzino
         other: Magazzini
@@ -598,8 +598,8 @@ it:
         one: Negozio
         other: Negozi
       spree/store_credit:
-        one: Store Credit
-        other: Store Credits
+        one: Credito
+        other: Crediti
       spree/store_credit_category:
         one: Category
         other: Categories
@@ -638,23 +638,23 @@ it:
             base:
               keys_should_be_positive_number: "Tier keys should all be numbers larger than 0"
             preferred_tiers:
-              should_be_hash: "should be a hash"
+              should_be_hash: "deve essere un Hash"
         spree/calculator/tiered_percent:
           attributes:
             base:
               keys_should_be_positive_number: "Tier keys should all be numbers larger than 0"
               values_should_be_percent: "Tier values should all be percentages between 0% and 100%"
             preferred_tiers:
-              should_be_hash: "should be a hash"
+              should_be_hash: "deve essere un Hash"
         spree/classification:
           attributes:
             taxon_id:
-              already_linked: "is already linked to this product"
+              already_linked: "è già collegato a questo prodotto"
         spree/credit_card:
           attributes:
             base:
-              card_expired: "Card has expired"
-              expiry_invalid: "Card expiration is invalid"
+              card_expired: "La Carta è scaduta"
+              expiry_invalid: "La scadenza della Carta non è valida"
         spree/inventory_unit:
           attributes:
             state:
@@ -664,7 +664,7 @@ it:
         spree/line_item:
           attributes:
             price:
-              not_a_number: "is not valid"
+              not_a_number: "non è valido"
         spree/price:
           attributes:
             currency:
@@ -677,11 +677,11 @@ it:
         spree/refund:
           attributes:
             amount:
-              greater_than_allowed: is greater than the allowed amount.
+              greater_than_allowed: è maggiore dell'importo consentito.
         spree/reimbursement:
           attributes:
             base:
-              return_items_order_id_does_not_match: One or more of the return items specified do not belong to the same order as the reimbursement.
+              return_items_order_id_does_not_match: Uno o più degli articoli resi specificati non appartengono allo stesso ordine del rimborso.
         spree/return_item:
           attributes:
             reimbursement:
@@ -697,11 +697,11 @@ it:
         spree/store:
           attributes:
             base:
-              cannot_destroy_default_store: Cannot destroy the default Store.
+              cannot_destroy_default_store: Impossibile Eliminare il Negozio di Default.
         spree/user_address:
           attributes:
             user_id:
-              default_address_exists: "already has a default address"
+              default_address_exists: "ha già un indirizzo di default"
         spree/wallet_payment_source:
           attributes:
             payment_source:
@@ -709,106 +709,106 @@ it:
   time:
     formats:
       solidus:
-        long: '%B %d, %Y %-l:%M %p'
-        short: "%b %-d '%y %-l:%M%P"
+        long: '%d %B %Y %H:%M'
+        short: "%d/%m/%Y %H:%M"
   devise:
     confirmations:
-      confirmed: Your account was successfully confirmed. You are now signed in.
-      send_instructions: You will receive an email with instructions about how to confirm your account in a few minutes.
+      confirmed: Account confermato! Autenticazione avvenuta.
+      send_instructions: Riceverai un'email contenente le istruzioni per la conferma del tuo account tra pochi minuti.
     failure:
-      inactive: Your account was not activated yet.
-      invalid: Invalid email or password.
-      invalid_token: Invalid authentication token.
-      locked: Your account is locked.
-      timeout: Your session expired, please sign in again to continue.
-      unauthenticated: You need to sign in or sign up before continuing.
-      unconfirmed: You have to confirm your account before continuing.
+      inactive: Il tuo account non è ancora stato attivato.
+      invalid: Email o Password non valida.
+      invalid_token: Token di autenticazione non valido.
+      locked: Il tuo account è bloccato.
+      timeout: La tua sessione è scaduta, accedi nuovamente per continuare.
+      unauthenticated: Per continuare devi effettuare l'accesso o la registrazione.
+      unconfirmed: Per continuare devi prima confermare il tuo account.
     mailer:
       confirmation_instructions:
-        subject: Confirmation instructions
+        subject: Istruzioni di conferma
       reset_password_instructions:
-        subject: Reset password instructions
+        subject: Istruzioni per reimpostare la password
       unlock_instructions:
-        subject: Unlock Instructions
+        subject: Istruzioni per sbloccare l'account
     oauth_callbacks:
       failure: "Could not authorize you from %{kind} because %{reason}."
       success: Successfully authorized from %{kind} account.
     unlocks:
-      send_instructions: You will receive an email with instructions about how to unlock your account in a few minutes.
-      unlocked: Your account was successfully unlocked. You are now signed in.
+      send_instructions: Riceverai un'email contenente le istruzioni per sbloccare il tuo account tra pochi minuti.
+      unlocked: Account sbloccato. Accesso effettuato.
     user_passwords:
       user:
-        cannot_be_blank: Your password cannot be blank.
-        send_instructions: You will receive an email with instructions about how to reset your password in a few minutes.
-        updated: Your password was changed successfully. You are now signed in.
+        cannot_be_blank: La password non può essere vuota.
+        send_instructions: Riceverai un'email contenente le istruzioni per reimpostare la password tra pochi minuti
+        updated: Password reimpostata. Accesso effettuato.
     user_registrations:
-      destroyed: Bye! Your account was successfully cancelled. We hope to see you again soon.
-      inactive_signed_up: You have signed up successfully. However, we could not sign you in because your account is %{reason}.
-      signed_up: Welcome! You have signed up successfully.
-      updated: You updated your account successfully.
+      destroyed: Arrivederci! Il tuo account è stato cancellato. Ci auguriamo di rivederci presto.
+      inactive_signed_up: L'autenticazione è avvenuta tuttavia non puoi accedere in quanto il tuo account è %{reason}.
+      signed_up: Benvenuto! La tua registrazione è stata effettuata.
+      updated: Account aggiornato.
     user_sessions:
-      signed_in: Signed in successfully.
-      signed_out: Signed out successfully.
+      signed_in: Autenticazione avvenuta.
+      signed_out: Disconnesso.
   errors:
     messages:
-      already_confirmed: was already confirmed
-      not_found: not found
-      not_locked: was not locked
+      already_confirmed: Già confermato
+      not_found: non trovato
+      not_locked: non era bloccato
       not_saved:
-        one: ! '1 error prohibited this %{resource} from being saved:'
-        other: ! '%{count} errors prohibited this %{resource} from being saved:'
+        one: ! '1 errore ha impossibilitato il salvataggio %{resource}:'
+        other: ! '%{count} errori ha impossibilitato il salvataggio %{resource}:'
   spree:
-    abbreviation: Abbreviation
-    accept: Accept
-    acceptance_status: Acceptance status
-    acceptance_errors: Acceptance errors
-    accepted: Accepted
+    abbreviation: Abbreviazione
+    accept: Accetta
+    acceptance_status: Stato Accettazione
+    acceptance_errors: Errori Accettazione
+    accepted: Accettato
     account: Account
-    account_updated: Account updated
-    action: Action
+    account_updated: Account aggiornato
+    action: Azione
     actions:
       add: Aggiungi
       cancel: Annulla
       continue: Continua
-      create: Create
+      create: Crea
       delete: Elimina
       destroy: Elimina
       edit: Modifica
-      list: List
-      listing: Listing
+      list: Elenco
+      listing: Elencando
       new: Nuovo
-      receive: Receive
-      refund: Refund
-      remove: Remove
+      receive: Ricevi
+      refund: Rimborso
+      remove: Rimuovi
       save: Salva
       ship: Spedisci
-      split: Diviso
+      split: Dividi
       update: Aggiorna
-    activate: Activate
-    active: Active
+    activate: Attiva
+    active: Attivo
     add: Aggiungi
     added: Aggiunto
-    add_action_of_type: Add action of type
-    add_country: Add Country
+    add_action_of_type: Aggiungi azione di tipo
+    add_country: Aggiungi Nazione
     add_coupon_code: Aggiungi Codice Coupon
     add_line_item: Aggiungi Articolo
-    add_new_header: Add New Header
-    add_new_style: Add New Style
-    add_one: Add One
-    add_option_value: Add Option Value
+    add_new_header: Aggiungi Nuova Header
+    add_new_style: Aggiungi Nuovo Stile
+    add_one: Aggiungi
+    add_option_value: Aggiungi Valore Opzione
     add_product: Aggiungi Prodotto
-    add_product_properties: Add Product Properties
-    add_variant_properties: Add Variant Properties
-    add_rule_of_type: Add rule of type
-    add_state: Add State
-    add_stock: Add Stock
-    add_stock_management: Add Stock Management
-    add_taxon: Add taxon
+    add_product_properties: Aggiungi Proprietà Prodotto
+    add_variant_properties: Aggiungi Proprietà Variante
+    add_rule_of_type: Aggiungi regola di tipo
+    add_state: Aggiungi Stato
+    add_stock: Aggiungi Magazzino
+    add_stock_management: Aggiungi Gestione Magazzino
+    add_taxon: Aggiungi taxon
     add_to_cart: Aggiungi al Carrello
-    add_to_stock_location: Add to location
+    add_to_stock_location: Aggiungi alla posizione
     add_variant: Aggiungi Variante
     adding_match: Adding match
-    additional_item: Additional Item
+    additional_item: Articolo Aggiuntivo
     address1: Indirizzo
     address2: Indirizzo (agg.)
     adjustable: Variabile
@@ -819,30 +819,30 @@ it:
       order: '%{promotion} (%{promotion_name})'
       tax_rates:
         sales_tax: '%{name}'
-        vat: '%{name} (Included in Price)'
+        vat: '%{name} (incluso nel prezzo)'
         sales_tax_with_rate: '%{name} %{amount}'
-        vat_with_rate: '%{name} %{amount} (Included in Price)'
-    adjustment_reasons: Adjustment Ragioni
+        vat_with_rate: '%{name} %{amount} (incluso nel prezzo)'
+    adjustment_reasons: Ragioni Adjustment
     adjustment_successfully_closed: Adjustment has been successfully closed!
     adjustment_successfully_opened: Adjustment has been successfully opened!
-    adjustment_total: Adjustment Total
+    adjustment_total: Totale Variazione
     adjustments: Variazioni
     admin:
       stores:
         form:
-          no_cart_tax_country: "No taxes on carts without address"
+          no_cart_tax_country: "Messuna tassazione applicabile sui carrelli senza indirizzo"
       images:
         index:
           choose_files: Scegli i file da caricare
           drag_and_drop: oppure trascinali direttamente qui
-          image_process_failed: Server failed to process the image
+          image_process_failed: Il server non è riuscito ad elaborare l'immagine
           upload_images: Caricamento Immagini
       payments:
         source_forms:
           storecredit:
             not_supported: "Creating store credit payments via the admin is not currently supported."
       prices:
-        any_country: "Any Country"
+        any_country: "Tutte le nazioni"
         index:
           amount_greater_than: Importo maggiore di
           amount_less_than: Importo minore di
@@ -863,47 +863,47 @@ it:
           single_code: Singolo codice promozionale
           path: Indirizzo
         activations_edit:
-          auto: All orders will attempt to use this promotion
-          single_code_html: "This promotion uses the promotion code: <code>%{code}</code>"
-          multiple_codes_html: "This promotion uses %{count} promotion codes"
+          auto: Tutti gli ordini tenteranno di utilizzare questa promozione
+          single_code_html: "Questa promozione utilizza il codice promozionale: <code>%{code}</code>"
+          multiple_codes_html: "Questa promozione utilizza %{count} codici promozionali"
         actions:
-          calculator_label: Calculated by
+          calculator_label: Calcolato da
       stock_locations:
         form:
-          general: General
+          general: Generale
           settings: Impostazioni
-          address: Address
+          address: Indirizzo
       store_credits:
         add: "Add store credit"
-        amount_authorized: Authorized
-        amount_credited: Credited
-        amount_used: Used
-        created_at: Issued On
-        back_to_edit: "Back to edit"
-        back_to_user_list: "Back to user list"
+        amount_authorized: Autorizzato
+        amount_credited: Accreditato
+        amount_used: Utilizzato
+        created_at: Rilasciato il
+        back_to_edit: "Torna alla modifica"
+        back_to_user_list: "Torna all'elenco utenti"
         back_to_store_credit_list: "Store credit list"
-        change_amount: "Change amount"
-        created_by: "Created By"
+        change_amount: "Importo Cambio"
+        created_by: "Creato da"
         credit_type: Tipologia
         memo: Memo
-        current_balance: "Current balance:"
+        current_balance: "Saldo Corrente:"
         edit: "Editing store credit"
         edit_amount: "Editing store credit amount"
         history: "Store credit history"
         invalidate_store_credit: "Invalidating store credit"
-        invalidated: "Invalidated"
-        issued_on: "Issued On"
+        invalidated: "Invalidato"
+        issued_on: "Rilasciato il"
         new: "New store credit"
         no_store_credit_selected: "No store credit was selected"
-        payment_originator: "Payment - Order #%{order_number}"
-        reason_for_updating: "Ragione for updating"
-        refund_originator: "Refund - Order #%{order_number}"
+        payment_originator: "Pagamento - Order #%{order_number}"
+        reason_for_updating: "Motivo dell'aggiornamento"
+        refund_originator: "Rso - Ordine #%{order_number}"
         resource_name: "store credits"
         user_originator: "User - %{email}"
-        unable_to_create: "Unable to create store credit"
-        unable_to_update: "Unable to update store credit"
-        unable_to_delete: "Unable to delete store credit"
-        unable_to_invalidate: "Unable to invalidate store credit"
+        unable_to_create: "Impossibile to create store credit"
+        unable_to_update: "Impossibile to update store credit"
+        unable_to_delete: "Impossibile to delete store credit"
+        unable_to_invalidate: "Impossibile to invalidate store credit"
         select_reason: "Select a reason for this store credit"
         select_amount_update_reason: "Select a reason for updating the amount"
         total_unused: "Total unused"
@@ -958,101 +958,101 @@ it:
         edit:
           api_access: "Accesso API"
           clear_key: "Cancella Chiave"
-          confirm_clear_key: "Are you sure you want to clear this user's API key? It will invalidate the existing key."
-          confirm_regenerate_key: "Are you sure you want to regenerate this user's API key? It will invalidate the existing key."
-          generate_key: "Generate API key"
+          confirm_clear_key: "Sei sicuro di voler cancellare la Chiave API? Se procedi l'attuale chiave diverrà inutilizzabile."
+          confirm_regenerate_key: "Sei sicuro di voler rigenerare la Chiave API? Se procedi l'attuale chiave diverrà inutilizzabile."
+          generate_key: "Genera Chiave API"
           key: "Chiave"
           no_key: "Nessuna Chiave"
           regenerate_key: "Rigenera Chiave"
       variants:
         table_filter:
-          show_deleted: Show deleted variants
+          show_deleted: Visualizza varianti eliminate
         new:
-          new_variant: New variant
+          new_variant: Nuova variante
         edit:
-          edit_variant: Edit Variant
+          edit_variant: Modifica Variante
         form:
-          dimensions: Dimensions
-          use_product_tax_category: Use Product Tax Category
-          pricing: Pricing
+          dimensions: Dimensioni
+          use_product_tax_category: Utilizza una Categoria di Tassazione del Prodotto
+          pricing: Prezzi
           pricing_hint: These values are populated from the product details page and can be overridden below
     administration: Amministrazione
-    agree_to_privacy_policy: Agree to Privacy Policy
-    agree_to_terms_of_service: Agree to Terms of Service
-    all: All
+    agree_to_privacy_policy: Accetta l'informativa sulla privacy
+    agree_to_terms_of_service: Accetta i Termini di servizio
+    all: Tutte
     all_adjustments_finalized: All adjustments successfully finalized!
     all_adjustments_unfinalized: All adjustments successfully unfinalized!
-    all_departments: All departments
-    all_items_have_been_returned: All items have been returned
-    already_signed_up_for_analytics: You have already signed up for Spree Analytics
-    alt_text: Alternative Text
-    alternative_phone: Alternative Telefono
+    all_departments: Tutti i reparti
+    all_items_have_been_returned: Tutti gli articoli sono stati restituiti
+    already_signed_up_for_analytics: Risulti già registrato a Spree Analytics
+    alt_text: Testo alternativo
+    alternative_phone: Telefono alternativo
     amount: Importo
     analytics_desc_header_1: Spree Analytics
     analytics_desc_header_2: Live analytics integrated into your Spree dashboard
     analytics_desc_list_1: Get live sales information as it happens
     analytics_desc_list_2: Requires only a free Spree account to activate
     analytics_desc_list_3: Absolutely no code to install
-    analytics_desc_list_4: It's completely free!
+    analytics_desc_list_4: Gratuito!
     analytics_trackers: Analytics Trackers
-    and: and
-    apply_code: Apply Codice
-    approve: Approve
-    approver: Approver
-    approved_at: Approved at
-    are_you_sure: Are you sure?
-    are_you_sure_delete: Are you sure you want to delete this record?
-    authorization_failure: Authorization Failure
+    and: e
+    apply_code: Applica Codice
+    approve: Approva
+    approver: Approvato da
+    approved_at: Approvato il
+    are_you_sure: Sei sicuro?
+    are_you_sure_delete: Sicuro di voler cancellare questo record?
+    authorization_failure: Autorizzazione Fallita
     authorized: Autorizzato
     auto_capture: Riscossione Automatica
-    auto_receive: Auto Receive
+    auto_receive: Ricezione Automatica
     available_on: Disponibile dal
     average_order_value: Valore medio Ordine
     avs_response: Risposta AVS
     back: Indietro
     back_end: Backend
     backordered: Backordered
-    back_to_adjustments_list: Back To Adjustments List
-    back_to_adjustment_reason_list: Back To Adjustment Ragione List
-    back_to_countries_list: Back To Countries List
-    back_to_customer_return: Back To Customer Return
-    back_to_customer_return_list: Back To Customer Return List
-    back_to_images_list: Back To Images List
-    back_to_option_types_list: Back To Option Types List
-    back_to_orders_list: Back To Ordini List
-    back_to_payment: Back To Payment
-    back_to_payment_methods_list: Back To Payment Methods List
-    back_to_payments_list: Back To Payments List
-    back_to_products_list: Back To Prodotti List
-    back_to_promotions_list: Back To Promozioni List
-    back_to_promotion_categories_list: Back To Promozioni Categories List
-    back_to_properties_list: Back To Property Types List
-    back_to_reports_list: Back To Reports List
-    back_to_refund_reason_list: Back To Refund Ragione List
-    back_to_reimbursement_type_list: Back To Rimborso Type List
-    back_to_return_authorizations_list: Back To RMA List
-    back_to_rma_reason_list: Back To RMA Ragione List
-    back_to_shipping_categories: Back To Spedizione Categories
-    back_to_shipping_categories_list: Back To Spedizione Categories List
-    back_to_shipping_methods_list: Back To Spedizione Methods List
-    back_to_states_list: Back To States List
+    back_to_adjustments_list: Ritorna a Adjustments List
+    back_to_adjustment_reason_list: Ritorna a Adjustment Ragione List
+    back_to_countries_list: Ritorna all'Elenco Nazioni
+    back_to_customer_return: Ritorna a Customer Return
+    back_to_customer_return_list: Ritorna a Customer Return List
+    back_to_images_list: Ritorna all'Elenco Immagini
+    back_to_option_types_list: Ritorna all'Elenco Opzioni
+    back_to_orders_list: Ritorna all'Elenco Ordini
+    back_to_payment: Ritorna al Pagamento
+    back_to_payment_methods_list: Ritorna all'Elenco Metodi di Pagamento
+    back_to_payments_list: Ritorna all'Elenco Pagamenti
+    back_to_products_list: Ritorna all'Elenco Prodotti
+    back_to_promotions_list: Ritorna all'Elenco Promozioni
+    back_to_promotion_categories_list: Ritorna all'Elenco Categorie di Promozione
+    back_to_properties_list: Ritorna all'Elenco Proprietà
+    back_to_reports_list: Ritorna all'Elenco Report
+    back_to_refund_reason_list: Ritorna all'Elenco Ragioni del Reso
+    back_to_reimbursement_type_list: Ritorna all'Elenco Tipologie di Rimborso
+    back_to_return_authorizations_list: Ritorna all'Elenco RMA
+    back_to_rma_reason_list: Ritorna all'Elenco Ragiorni RMA
+    back_to_shipping_categories: Ritorna alle Categorie di Spedizione
+    back_to_shipping_categories_list: Ritorna all'Elenco Categorie di Spedizione
+    back_to_shipping_methods_list: Ritorna all'Elenco Metodi di Spedizione
+    back_to_states_list: Ritorna all'Elenco degli Stati
     back_to_stock_locations_list: Back to Stock Locations List
-    back_to_stock_movements_list: Back to Stock Movements List
+    back_to_stock_movements_list: Ritorna all'Elenco Movimenti di Magazzino
     back_to_store: Visualizza Negozio
-    back_to_tax_categories_list: Back To Tax Categories List
-    back_to_tax_rates_list: Back To Tax Rates List
-    back_to_taxonomies_list: Back To Taxonomies List
-    back_to_trackers_list: Back To Trackers List
-    back_to_users_list: Back To Utenti List
-    back_to_zones_list: Back To Zones List
+    back_to_tax_categories_list: Ritorna all'Elenco delle Categorie di Tassazione
+    back_to_tax_rates_list: Ritorna a Tax Rates List
+    back_to_taxonomies_list: Ritorna all'Elenco delle Tassonomie
+    back_to_trackers_list: Ritorna a Trackers List
+    back_to_users_list: Ritorna all'Elenco Utenti
+    back_to_zones_list: Ritorna all'Elenco Aree Geografiche
     backorderable: Backorderable
     backorderable_default: Backorderable default
     backorderable_header: Approvvigionamento
     backorders_allowed: backorders allowed
-    balance_due: Balance Due
+    balance_due: Somma Dovuta
     base_amount: Base Importo
     base_percent: Base Percent
-    bill_address: Bill Address
+    bill_address: Bill Indirizzo
     billing: Billing
     billing_address: Indirizzo di Fatturazione
     both: Both
@@ -1073,7 +1073,7 @@ it:
     cannot_perform_operation: Cannot perform requested operation
     cannot_set_shipping_method_without_address: Cannot set shipping method until customer details are provided.
     cannot_update_email: You do not have access to update this user's email address. <br />Please contact a superuser if you need to perform this action.
-    capture: Capture
+    capture: Riscuoti
     capture_events: Capture events
     card_code: Card Codice
     card_number: Card Number
@@ -1092,41 +1092,41 @@ it:
     check_stock_on_transfer: Check stock on transfer
     checkout: Checkout
     choose_a_customer: Scegli Cliente
-    choose_a_taxon_to_sort_products_for: "Choose a taxon to sort products for"
+    choose_a_taxon_to_sort_products_for: "Scegli un taxon per posizionare i prodotti"
     choose_currency: Choose Valuta
-    choose_dashboard_locale: Choose Dashboard Locale
-    choose_location: Choose location
+    choose_dashboard_locale: Scegli una Lingua per la Bacheca
+    choose_location: Scegli Località
     choose_promotion_action: Choose action
-    choose_promotion_rule: Choose rule
-    choose_reason: Choose reason
+    choose_promotion_rule: Scegli ruolo
+    choose_reason: Scegli ragione
     city: Città
-    clear_cache: Clear Cache
-    clear_cache_ok: Cache was flushed
-    clear_cache_warning: Clearing cache will temporarily reduce the performance of your store.
+    clear_cache: Cancella Cache
+    clear_cache_ok: La Cache è stata cancellata
+    clear_cache_warning: La cancellazione della cache ridurrà temporaneamente le prestazioni del tuo negozio.
     clone: Clone
-    close: Close
-    closed: Closed
+    close: Chiudi
+    closed: Chiuso
     code: Codice
     company: Azienda
     complete: complete
     complete_order: Complete Order
-    configuration: Configuration
-    configurations: Configurations
-    confirm: Confirm
-    confirm_delete: Confirm Deletion
-    confirm_order: Confirm Order
-    confirm_password: Password Confirmation
-    continue: Continue
-    continue_shopping: Continue shopping
+    configuration: Configurazione
+    configurations: Configurazioni
+    confirm: Conferma
+    confirm_delete: Conferma Cancellazione
+    confirm_order: Conferma Ordine
+    confirm_password: Conferma Password
+    continue: Continua
+    continue_shopping: Continua acquisti
     cost_currency: Cost Valuta
     cost_price: Cost Price
     could_not_connect_to_jirafe: Could not connect to Jirafe to sync data. This will be automatically retried later.
-    could_not_create_customer_return: Could not create customer return
-    could_not_create_stock_movement: There was a problem saving this stock movement. Please try again.
+    could_not_create_customer_return: Impossibile creare Reso Cliente
+    could_not_create_stock_movement: Si è verificato un problema nel salvare il movimento di magazzino. Per favore prova di nuovo.
     count_on_hand: Disponibilità
     countries: Nazioni
     country: Nazione
-    country_based: In Base alla Nazione
+    country_based: In base alla nazione
     country_name: Nome
     country_names:
       CA: Canada
@@ -1135,40 +1135,40 @@ it:
       US: Stati Uniti d'America
     coupon: Coupon
     coupon_code: Codice Coupon
-    coupon_code_already_applied: The coupon code has already been applied to this order
-    coupon_code_applied: The coupon code was successfully applied to your order.
+    coupon_code_already_applied: Il codice coupon è già stato applicato a questo ordine
+    coupon_code_applied: Il codice coupon è stato applicato al tuo ordine.
     coupon_code_better_exists: The previously applied coupon code results in a better deal
-    coupon_code_expired: The coupon code is expired
-    coupon_code_max_usage: Coupon code usage limit exceeded
-    coupon_code_not_eligible: This coupon code is not eligible for this order
-    coupon_code_not_found: The coupon code you entered doesn't exist. Please try again.
-    coupon_code_unknown_error: This coupon code could not be applied to the cart at this time.
+    coupon_code_expired: Il codice coupon è scaduto
+    coupon_code_max_usage: Il limite di utilizzo del codice coupon è stato superato
+    coupon_code_not_eligible: Il codice coupon non è utilizzabile per questo ordine
+    coupon_code_not_found: Codice coupon inesistente. Per favore riprova.
+    coupon_code_unknown_error: Il codice coupon non può essere applicato in questo momento al carrello.
     customer: Cliente
-    customer_return: Customer Return
-    customer_returns: Customer Returns
-    create: Create
-    create_a_new_account: Create a new account
-    create_reimbursement: Create reimbursement
-    create_one: Create One.
-    created_at: Created At
-    created_by: Created by
-    created_successfully: Created successfully
-    credit: Credit
-    credits: Credits
-    credit_allowed: Credit Allowed
+    customer_return: Reso Cliente
+    customer_returns: Resi Cliente
+    create: Crea
+    create_a_new_account: Crea un nuovo account
+    create_reimbursement: Crea rimborso
+    create_one: Aggiungi.
+    created_at: Creato il
+    created_by: Creato da
+    created_successfully: Creazione completa
+    credit: Credito
+    credits: Crediti
+    credit_allowed: Credito Concesso
     credit_card: Carta di Credito
     credit_cards: Carte di Credito
-    credit_owed: Credit Owed
+    credit_owed: Credit Dovuto
     currency: Valuta
     currency_settings: Valuta Impostazioni
-    current: Current
-    current_promotion_usage: ! 'Current Usage: %{count}'
+    current: Attuale
+    current_promotion_usage: ! 'Utilizzo Attuale: %{count}'
     customer: Cliente
-    customer_details: Customer Details
-    customer_details_updated: Customer Details Updated
+    customer_details: Dettagli Cliente
+    customer_details_updated: Dettagli Cliente Aggiornati
     customer_search: Ricerca Cliente
-    cut: Cut
-    cvv_response: CVV Response
+    cut: Taglia
+    cvv_response: Risposta CVV
     dash:
       jirafe:
         app_id: App ID
@@ -1179,8 +1179,8 @@ it:
         site_id: Site ID
         token: Token
       jirafe_settings_updated: Jirafe Impostazioni have been updated.
-    date: Date
-    date_completed: Date Completed
+    date: Data
+    date_completed: Completato il
     date_picker:
       first_day: 0
       format: ! '%d/%m/%Y'
@@ -1189,51 +1189,51 @@ it:
     default: Default
     default_refund_amount: Importo Rimborso di default
     delete: Elimina
-    deleted_variants_present: Some line items in this order have products that are no longer available.
-    deleted_successfully: Deleted successfully
-    delivery: Delivery
-    depth: Depth
+    deleted_variants_present: Alcune articoli di questo ordine non sono più disponibili.
+    deleted_successfully: Cancellazione avvenuta
+    delivery: Consegna
+    depth: Profondità
     description: Descrizione
-    destination: Destination
+    destination: Destinazione
     destination_location: Destination location
-    destroy: Destroy
-    details: Details
-    discount_amount: Discount Importo
-    dismiss_banner: No. Thanks! I'm not interested, do not display this message again
-    display: Display
-    download_promotion_code_list: Download Codice List
-    edit: Edit
-    editing_country: Editing Country
+    destroy: Elimina
+    details: Dettagli
+    discount_amount: Importo sconto
+    dismiss_banner: No, grazie! Non sono interessato, non mostrare più questo messaggio
+    display: Mostra
+    download_promotion_code_list: Scarica elenco codici promozionali
+    edit: Modifica
+    editing_country: Modifica Nazione
     editing_adjustment_reason: Editing Adjustment Ragione
-    editing_option_type: Editing Option Type
-    editing_payment_method: Editing Payment Method
-    editing_product: Editing Product
-    editing_promotion: Editing Promozione
-    editing_promotion_category: Editing Promozione Category
-    editing_property: Editing Property Type
+    editing_option_type: Modifica Opzione
+    editing_payment_method: Modifica Metodo di Pagamento
+    editing_product: Modifica Prodotto
+    editing_promotion: Modifica Promozione
+    editing_promotion_category: Modifica Categoria Promozione
+    editing_property: Modifica Proprietà
     edit_refund_reason: Edit Refund Ragione
     editing_refund: Editing Refund
-    editing_refund_reason: Editing Refund Ragione
-    editing_reimbursement: Editing Rimborso
-    editing_reimbursement_type: Editing Rimborso Type
-    editing_rma_reason: Editing RMA Ragione
-    editing_shipping_category: Editing Spedizione Category
-    editing_shipping_method: Editing Spedizione Method
-    editing_state: Editing State
-    editing_stock_location: Editing Stock Location
-    editing_stock_movement: Editing Stock Movement
-    editing_tax_category: Editing Tax Category
-    editing_tax_rate: Editing Tax Rate
-    editing_tracker: Editing Tracker
-    editing_user: Editing User
-    editing_zone: Editing Zone
+    editing_refund_reason: Modifica Ragione Reso
+    editing_reimbursement: Modifica Rimborso
+    editing_reimbursement_type: Modifica Tipologia Rimborso
+    editing_rma_reason: Modifica Ragione RMA
+    editing_shipping_category: Modifica Categoria di Spedizione
+    editing_shipping_method: Modifica Metodo di Spedizione
+    editing_state: Modifica Stato
+    editing_stock_location: Modifica Pozione Magazzino
+    editing_stock_movement: Modifica Movimento di Magazzino
+    editing_tax_category: Modifica Categoria Tassazione
+    editing_tax_rate: Modifica Tassazione
+    editing_tracker: Modifica Tracciamento
+    editing_user: Modifica Utente
+    editing_zone: Modifica Area Geografica
     eligibility_errors:
       messages:
-        has_excluded_product: Your cart contains a product that prevents this coupon code from being applied.
+        has_excluded_product: Il tuo carrello contiene un prodotto che impedisce l'utilizzo del codice coupon.
         has_excluded_taxon: Your cart contains a product from an excluded category that prevents this coupon code from being applied.
         item_total_less_than: This coupon code can't be applied to orders less than %{amount}.
-        item_total_less_than_or_equal: This coupon code can't be applied to orders less than or equal to %{amount}.
-        limit_once_per_user: This coupon code can only be used once per user.
+        item_total_less_than_or_equal: Questo codice coupon non può essere utilizzato in ordini con importo totale inferiore o uguale a %{amount}.
+        limit_once_per_user: Questo codice coupon è già stato utilizzato.
         missing_product: This coupon code can't be applied because you don't have all of the necessary products in your cart.
         missing_taxon: You need to add a product from all applicable categories before applying this coupon code.
         no_applicable_products: You need to add an applicable product before applying this coupon code.
@@ -1242,12 +1242,12 @@ it:
         no_user_specified: You need to login before applying this coupon code.
         not_first_order: This coupon code can only be applied to your first order.
     email: Email
-    empty: Empty
+    empty: Vuoto
     empty_cart: Carrello Vuoto
-    enable_mail_delivery: Enable Mail Delivery
-    end: End
-    ending_in: Ending in
-    error: error
+    enable_mail_delivery: Abilita Invio E-mail
+    end: Fine
+    ending_in: Ultime Cifre
+    error: errore
     errors:
       messages:
         cannot_delete_finalized_stock_location: Stock Location cannot be destroyed if you have open stock transfers.
@@ -1282,7 +1282,7 @@ it:
     existing_shipments: Existing shipments
     hints:
       spree/price:
-        country: "This determines in what country the price is valid.<br/>Default: Any Country"
+        country: "This determines in what country the price is valid.<br/>Default: Any Nazione"
         master_variant: "Changing master variant prices will not change variant prices below, but will be used to populate all new variants"
         options: "These options are used to create variants in the variants table. They can be changed in the variants tab"
       spree/product:
@@ -1383,9 +1383,9 @@ it:
     insufficient_stock: Insufficient stock available, only %{on_hand} remaining
     insufficient_stock_for_order: Insufficient stock for order
     insufficient_stock_lines_present: Some line items in this order have insufficient quantity.
-    intercept_email_address: Intercept Email Address
+    intercept_email_address: Intercept Email Indirizzo
     intercept_email_instructions: Override email recipient and replace with this address.
-    internal_name: Internal Nome
+    internal_name: Nome Interno
     invalid_exchange_variant: Invalid exchange variant.
     invalid_payment_method_type: Invalid payment method type.
     invalid_promotion_action: Invalid promotion action.
@@ -1396,7 +1396,7 @@ it:
     inventory_canceled: Inventory canceled
     inventory_error_flash_for_insufficient_quantity: "%{names} became unavailable."
     inventory_not_available: Inventory not available for %{item}.
-    inventory_state: Inventory State
+    inventory_state: Inventory Stato
     inventory_states:
       backordered: Backordered
       canceled: Canceled
@@ -1418,12 +1418,12 @@ it:
     items_reimbursed: Items reimbursed
     jirafe: Jirafe
     landing_page_rule:
-      path: Path
+      path: Percorso
     last_name: Cognome
     last_name_begins_with: Cognome inizia con
     learn_more: Learn More
     lifetime_stats: Lifetime Stats
-    line_item_adjustments: "Line item adjustments"
+    line_item_adjustments: "Variazioni della riga d'ordine"
     list: List
     listing_countries: Countries
     listing_orders: Ordini
@@ -1431,7 +1431,7 @@ it:
     listing_reports: Reports
     listing_tax_categories: Tax Categories
     listing_users: Utenti
-    loading: Loading
+    loading: Caricamento
     locale_changed: Locale Changed
     location: Location
     lock: Lock
@@ -1448,15 +1448,15 @@ it:
     look_for_similar_items: Look for similar items
     make_refund: Make refund
     make_sure_the_above_reimbursement_amount_is_correct: Make sure the above reimbursement amount is correct
-    manage_promotion_categories: Manage Promozione Categories
+    manage_promotion_categories: Gestisci Categorie Promozioni
     manage_stock: Store Stock
-    manual_intervention_required: Manual intervention required
-    manage_variants: Manage Varianti
-    master_price: Master Price
+    manual_intervention_required: Intervento manuale richiesto
+    manage_variants: Gestisci Varianti
+    master_price: Prezzo principale
     master_variant: Master Variant
     match_choices:
-      all: All
-      none: None
+      all: Tutte
+      none: Nessuna
     max_items: Max Items
     member_since: Iscritto dal
     memo: Memo
@@ -1464,44 +1464,44 @@ it:
     meta_keywords: Meta Keywords
     meta_title: Meta Title
     metadata: Metadata
-    minimal_amount: Minimal Importo
-    month: Month
-    more: More
-    move_stock_between_locations: Move Stock Between Locations
-    my_account: My Account
-    my_orders: My Ordini
+    minimal_amount: Importo Minimo
+    month: Mese
+    more: Ancora
+    move_stock_between_locations: Trasferisci Scorte tra Magazzini
+    my_account: Il Mio Account
+    my_orders: I Miei Ordini
     name: Nome
-    name_on_card: Nome on card
+    name_on_card: Nome sulla carta
     name_or_sku: Nome o SKU (inserisci almeno i primi 4 caratteri del nome del prodotto)
     negative_movement_absent_item: Cannot create negative movement for absent stock item.
-    new: New
+    new: Nuovo
     new_adjustment: New Adjustment
     new_adjustment_reason: New Adjustment Ragione
-    new_customer: New Customer
+    new_customer: Nuovo Cliente
     new_customer_return: New Customer Return
-    new_country: New Country
+    new_country: Nuova Nazione
     new_image: Nuova Immagine
     new_option_type: Nuova Opzione
     new_order: Nuovo Ordine
-    new_order_completed: New Order Completed
+    new_order_completed: Nuovo Ordine Completato
     new_payment: Nuovo Pagamento
     new_payment_method: Nuovo Metodo di Pagamento
     new_product: Nuovo Prodotto
     new_promotion: Nuova Promozione
-    new_promotion_category: Nuova Categoria Promozioniale
+    new_promotion_category: Nuova Categoria Promozioni
     new_promotion_code_batch: New Promozione Codice Batch
     new_property: Nuova Proprietà
-    new_refund: New Refund
-    new_refund_reason: New Refund Ragione
-    new_rma_reason: New RMA Ragione
-    new_return_authorization: New RMA
-    new_shipping_category: New Shipping Category
+    new_refund: Nuovo Reso
+    new_refund_reason: Nuova Ragione Reso
+    new_rma_reason: Nuova Ragione RMA
+    new_return_authorization: Nuovo RMA
+    new_shipping_category: Nuova Categoria Spedizioni
     new_shipping_method: Nuovo Metodo di Spedizione
     new_shipment_at_location: New shipment at location
     new_state: Nuovo Stato
     new_stock_location: Nuovo Magazzino
-    new_stock_movement: New Stock Movement
-    new_store_credit: New Store Credit
+    new_stock_movement: New Movimento Magazzino
+    new_store_credit: Nuovo Credito
     new_store: Nuovo Negozio
     new_tax_category: New Tax Category
     new_tax_rate: New Tax Rate
@@ -1511,87 +1511,87 @@ it:
     new_user: Nuovo Utente
     new_variant: Nuova Variante
     new_zone: Nuova Area Geografica
-    next: Next
-    no_actions_added: No actions added
-    no_images_found: No images found
+    next: Prossimo
+    no_actions_added: Nessuna azione aggiunta
+    no_images_found: Nessuna immagine
     no_inventory_selected: No inventory selected
-    no_orders_found: No orders found
-    no_option_values_on_product_html: "This product has no associated option values. Add some to it through Option Types in the %{link}."
-    no_payment_methods_found: No payment methods found
-    no_payment_found: No payment found
-    no_pending_payments: No pending payments
-    no_products_found: No products found
-    no_promotions_found: No promotions found
-    no_results: No results
-    no_rules_added: No rules added
-    no_resource: 'No %{resource} found.'
+    no_orders_found: Nessun ordine
+    no_option_values_on_product_html: "Questo prodotto non ha nessuna opzione associata.<br />Aggiungile dall'area \"%{link}\"!"
+    no_payment_methods_found: Nessun metodo di pagamento
+    no_payment_found: Nessun pagamento
+    no_pending_payments: Nessun pagamento in sopseso
+    no_products_found: Nessun prodotto
+    no_promotions_found: Nessuna promozione
+    no_results: Nessun risultato
+    no_rules_added: Nessuna regola aggiunta
+    no_resource: 'Nessuna risultato trovato.'
     no_resource_found_html: 'No %{resource} found, %{add_one_link}!'
-    no_resource_found_link: Add One
+    no_resource_found_link: Aggiungi
     no_resource_found: ! 'No %{resource} found'
-    no_shipping_methods_found: No shipping methods found
-    no_shipping_method_selected: No shipping method selected.
+    no_shipping_methods_found: Nessun metodo di spedizione
+    no_shipping_method_selected: Nessun metodo di spedizione selezionato.
     no_trackers_found: No Trackers Found
     no_stock_locations_found: No stock locations found
-    no_tracking_present: No tracking details provided.
-    no_variants_found: No variants found.
-    no_variants_found_try_again: No variants found. Try changing the search values.
-    none: None
-    none_selected: None Selected
-    normal_amount: Normal Importo
-    not: not
-    not_available: N/A
+    no_tracking_present: Non sono stati forniti dettagli sul tracciamento.
+    no_variants_found: Nessuna variante.
+    no_variants_found_try_again: Nessuna variante trovata. Prova a variare i parametri di ricerca.
+    none: Niente
+    none_selected: Nessuno selezionato
+    normal_amount: Quantità Normale
+    not: no
+    not_available: Non disponibile
     not_enough_stock: There is not enough inventory at the source location to complete this transfer.
     not_found: ! '%{resource} is not found'
     note: Note
     note_already_received_a_refund: "Note: This order has already received a refund.  Make sure the above reimbursement amount is correct."
     notice_messages:
-      product_cloned: Product has been cloned
-      product_deleted: Product has been deleted
-      product_not_cloned: Product could not be cloned
-      product_not_deleted: Product could not be deleted
-      variant_deleted: Variant has been deleted
-      variant_not_deleted: Variant could not be deleted
+      product_cloned: Prodotto clonato
+      product_deleted: Prodotto eliminato
+      product_not_cloned: Prodotto non clonabile
+      product_not_deleted: Prodotto non cancellabile
+      variant_deleted: Variante eliminata
+      variant_not_deleted: Variante non cancellabile
     num_orders: "# Ordini"
-    number: Number
-    number_of_codes: ! '%{count} codes'
-    on_hand: On Hand
-    open: Open
-    option_type: Option Type
-    option_type_placeholder: Choose an option type
+    number: Numero
+    number_of_codes: ! '%{count} codici'
+    on_hand: Disponibile
+    open: Aperto
+    option_type: Opzione
+    option_type_placeholder: Scegli un'opzione
     option_types: Opzioni
-    option_value: Option Value
-    option_values: Option Values
-    optional: Optional
+    option_value: Valore Opzione
+    option_values: Valori Opzione
+    optional: Opzionale
     options: Opzioni
-    or: or
+    or: oppure
     or_over_price: ! '%{price} or over'
-    order: Order
+    order: Ordine
     order_adjustments: Order adjustments
-    order_already_completed: Order is already completed
-    order_approved: Order approved
-    order_canceled: Order canceled
-    order_completed: Order completed
-    order_details: Order Details
-    order_email_resent: Order Email Resent
+    order_already_completed: Ordine già completato
+    order_approved: Ordine approvato
+    order_canceled: Ordine cancellato
+    order_completed: Ordine completato
+    order_details: Dettagli Ordine
+    order_email_resent:  Email Ordine Reinviata
     order_information: Informazioni Ordine
     order_mailer:
       cancel_email:
-        dear_customer: Dear Customer,
-        instructions: Your order has been CANCELED.  Please retain this cancellation information for your records.
-        order_summary_canceled: Order Summary [CANCELED]
-        subject: Cancellation of Order
+        dear_customer: Caro Cliente,
+        instructions: Il tuo ordine è stato CANCELLATO.  Please retain this cancellation information for your records.
+        order_summary_canceled: Order Summary [CANCELLATO]
+        subject: Cancellazione Ordine
         subtotal: ! 'Subtotal:'
-        total: ! 'Order Total:'
+        total: ! 'Totale Ordine:'
       confirm_email:
-        dear_customer: Dear Customer,
+        dear_customer: Caro Cliente,
         instructions: Please review and retain the following order information for your records.
         order_summary: Order Summary
-        subject: Order Confirmation
+        subject: Conferma Ordine
         subtotal: ! 'Subtotal:'
         thanks: Thank you for your business.
-        total: ! 'Order Total:'
+        total: ! 'Totale Ordine:'
       inventory_cancellation:
-        dear_customer: Dear Customer,
+        dear_customer: Caro Cliente,
         instructions: Some items in your order have been CANCELED.  Please retain this cancellation information for your records.
         order_summary_canceled: Canceled Items
         subject: Cancellation of Items
@@ -1605,12 +1605,12 @@ it:
     order_refresh_totals: Refresh Totals
     order_resumed: Order resumed
     order_state:
-      address: Address
+      address: Indirizzo
       awaiting_return: Awaiting return
       canceled: Canceled
       cart: Carrello
-      complete: Complete
-      confirm: Confirm
+      complete: Completato
+      confirm: Confermato
       delivery: Delivery
       payment: Pagamento
       resumed: Riattivato
@@ -1633,7 +1633,7 @@ it:
     path: Percorso
     pay: paga
     payment: Pagamento
-    payment_amount: Payment Importo
+    payment_amount: Importo pagamento
     payment_could_not_be_created: Il Pagamento non può essere creato.
     payments_failed_count:
       one: 1 Pagamento
@@ -1741,7 +1741,7 @@ it:
     receiving: Receiving
     receiving_match: Receiving match
     reception_states:
-      awaiting: Awaiting
+      awaiting: In Attesa
       cancelled: Canceled
       expired: Expired
       given_to_customer: Given to customer
@@ -1753,7 +1753,7 @@ it:
       unexchanged: Unexchanged
     reception_status: Reception Status
     reference: Reference
-    refund: Refund
+    refund: Rimborso
     refund_amount_must_be_greater_than_zero: Refund amount must be greater than zero
     refund_reasons: Refund Ragioni
     refunded_amount: Refunded Importo
@@ -1767,7 +1767,7 @@ it:
     reimbursement_perform_failed: "Rimborso could not be performed.  Error: %{error}"
     reimbursement_states:
       errored: Errored
-      pending: Pending
+      pending: In Sospeso
       reimbursed: Reimbursed
     reimbursement_status: Rimborso status
     reimbursement_type: Rimborso type
@@ -1805,21 +1805,21 @@ it:
     reimbursement_mailer:
       reimbursement_email:
         days_to_send: ! 'You have %{days} days to send back any items awaiting exchange.'
-        dear_customer: Dear Customer,
+        dear_customer: Caro Cliente,
         exchange_summary: Exchange Summary
         for: for
         instructions: Your reimbursement has been processed.
         refund_summary: Refund Summary
         subject: Rimborso Notification
         total_refunded: ! 'Total refunded: %{total}'
-    return_number: Return Number
-    return_quantity: Return Quantità
-    return_reasons: Return Ragioni
+    return_number: Numero Reso
+    return_quantity: Quantità Reso
+    return_reasons: Ragioni Reso
     returned: Returned
     review: Review
     risk: Risk
     risk_analysis: Risk Analysis
-    risky: Risky
+    risky: A Rischio
     rma_credit: RMA Credit
     rma_number: RMA Number
     rma_value: RMA Value
@@ -1850,16 +1850,16 @@ it:
     server_error: The server returned an error
     settings: Impostazioni
     ship: ship
-    ship_address: Ship Address
+    ship_address: Ship Indirizzo
     ship_address_required: Valid shipping address required
     ship_total: Ship Total
     shipped_at: Shipped At
     shipment: Spedizione
-    shipment_adjustments: "Spedizione adjustments"
+    shipment_adjustments: "Variazioni Spedizione"
     shipment_details: "From %{stock_location} via %{shipping_method}"
     shipment_mailer:
       shipped_email:
-        dear_customer: Dear Customer,
+        dear_customer: Caro Cliente,
         instructions: Your order has been shipped
         shipment_summary: Spedizione Summary
         subject: Spedizione Notification
@@ -1922,8 +1922,8 @@ it:
     ssl:
       change_protocol: "Please switch to using HTTP (rather than HTTPS) and retry this request."
     start: Inizio
-    state: State
-    state_based: State Based
+    state: Stato
+    state_based: In base alla regione
     states: States
     states_count:
       one: "%{count} State"
@@ -1936,7 +1936,7 @@ it:
     stock_locations_need_a_default_country: You must create a default country before creating a stock location.
     stock_management: Gestione Scorte
     stock_management_requires_a_stock_location: Please create a stock location in order to manage stock.
-    stock_movements: Stock Movements
+    stock_movements: Movimenti di Magazzino
     stock_movements_for_stock_location: Stock Movements for %{stock_location_name}
     stock_not_below_zero: Stock must not be below zero.
     stock_successfully_transferred: Stock was successfully transferred between locations.
@@ -1953,21 +1953,21 @@ it:
         allocation: Added
         capture: Used
         credit: Credit
-        invalidate: Invalidated
+        invalidate: Invalidato
         void: Credit
         admin:
-          authorize: "Authorized"
-          eligible: "Eligibility Verified"
+          authorize: "Autorizzato"
+          eligible: "Idoneo"
           void: "Voided"
       errors:
         unable_to_fund: "Unable to pay for order using store credits"
         cannot_invalidate_uncaptured_authorization: "Cannot invalidate a store credit with an uncaptured authorization"
-      expiring: Expiring
+      expiring: In Scadenza
       insufficient_authorized_amount: "Unable to capture more than authorized amount"
       insufficient_funds: "Store credit amount remaining is not sufficient"
-      non_expiring: Non-expiring
+      non_expiring: Senza scadenza
       select_one_store_credit: "Select store credit to go towards remaining balance"
-      store_credit: Store Credit
+      store_credit: Credito
       successful_action: "Successful store credit %{action}"
       unable_to_credit: "Unable to credit code: %{auth_code}"
       unable_to_void: "Unable to void code: %{auth_code}"
@@ -1977,9 +1977,9 @@ it:
     store_credit_category:
       default: Default
     store_rule:
-      choose_stores: Choose Stores
+      choose_stores: Scegli Negozio
     street_address: Indirizzo
-    street_address_2: Indirizzo (cont'd)
+    street_address_2: Indirizzo (agg.)
     subtotal: Subtotal
     subtract: Subtract
     success: Success
@@ -1988,13 +1988,13 @@ it:
     successfully_removed: ! '%{resource} has been successfully removed!'
     successfully_signed_up_for_analytics: Successfully signed up for Spree Analytics
     successfully_updated: ! '%{resource} has been successfully updated!'
-    tax: Tax
-    tax_included: "Tax (incl.)"
-    tax_categories: Tax Categories
-    tax_category: Tax Category
-    tax_code: Tax Codice
-    tax_rate_amount_explanation: Tax rates are a decimal amount to aid in calculations, (i.e. if the tax rate is 5% then enter 0.05)
-    tax_rates: Tax Rates
+    tax: Tassazione
+    tax_included: "Tassazione (incl.)"
+    tax_categories: Tassazione Categories
+    tax_category: Tassazione Category
+    tax_code: Tassazione Codice
+    tax_rate_amount_explanation: Tassazione rates are a decimal amount to aid in calculations, (i.e. if the tax rate is 5% then enter 0.05)
+    tax_rates: Tassazione Rates
     taxon: Taxon
     taxon_edit: Edit Taxon
     taxon_placeholder: Add a Taxon
@@ -2019,20 +2019,20 @@ it:
     test_mode: Test Mode
     thank_you_for_your_order: Thank you for your business.  Please print out a copy of this confirmation page for your records.
     there_are_no_items_for_this_order: There are no items for this order. Please add an item to the order to continue.
-    there_were_problems_with_the_following_fields: There were problems with the following fields
+    there_were_problems_with_the_following_fields: Ci sono dei problemi con i seguenti campi
     this_order_has_already_received_a_refund: This order has already received a refund
     thumbnail: Anteprima
-    tiers: Tiers
-    tiered_flat_rate: Tiered Flat Rate
-    tiered_percent: Tiered Percent
-    time: Time
-    to: to
+    tiers: Livelli
+    tiered_flat_rate: Tariffa Fissa a Livelli
+    tiered_percent: Tariffa Fissa a Percentuale
+    time: Tempo
+    to: a
     to_add_variants_you_must_first_define: To add variants, you must first define
-    total: Total
+    total: Totale
     total_excluding_vat: Pre-Tax Total
     total_per_item: Total per item
     total_pre_tax_refund: Total Pre-Tax Refund
-    total_price: Total price
+    total_price: Prezzo totale
     total_sales: Toale Acquisti
     track_inventory: Track Inventory
     tracking: Tracking
@@ -2046,21 +2046,21 @@ it:
     transfer_to_location: Transfer To
     transfer_number: Transfer Number
     tree: Tree
-    try_changing_search_values: Try changing the search values.
-    type: Type
-    type_to_search: Type to search
+    try_changing_search_values: Prova a modificare i parametri di ricerca.
+    type: Tipologia
+    type_to_search: Tipologia di ricerca
     unable_to_find_all_inventory_units: Unable to find all specified inventory units
-    unable_to_connect_to_gateway: Unable to connect to gateway.
-    unable_to_create_reimbursements: Unable to create reimbursements because there are items pending manual intervention.
+    unable_to_connect_to_gateway: Impossibile connettersi al gateway.
+    unable_to_create_reimbursements: Impossibile creare rimborsi perché ci sono articoli che necessitano di un intervento manuale.
     unfinalize_all_adjustments: Annulla Registrazione
     under_price: Under %{price}
-    unlock: Unlock
-    unrecognized_card_type: Unrecognized card type
+    unlock: Sblocca
+    unrecognized_card_type: Tipologia carta non riconosciuta
     unshippable_items: Unshippable Items
-    update: Update
-    updated_successfully: Updated successfully
-    updating: Updating
-    usage_limit: Usage Limit
+    update: Aggiorna
+    updated_successfully: Aggiornamento avvenuto
+    updating: Aggiornamento
+    usage_limit: Limite d'utilizzo
     use_app_default: Use App Default
     use_billing_address: Usa Indirizzo di Fatturazione
     use_existing_cc: Use an existing card on file
@@ -2068,44 +2068,44 @@ it:
     use_new_cc_or_payment_method: Use a new card / payment method
     user: Utente
     user_rule:
-      choose_users: Choose users
+      choose_users: Scegli utenti
     user_role_rule:
-      choose_roles: Choose Roles
+      choose_roles: Scegli Ruoli
       label: User must contain %{select} of these roles
-      match_all: all
-      match_any: at least one
+      match_all: tutte
+      match_any: almeno una
     users: Utenti
     validation:
-      unpaid_amount_not_zero: "Importo was not fully reimbursed. Still due: %{amount}"
+      unpaid_amount_not_zero: "Importo non completamente rimborsato. Dovuto: %{amount}"
       cannot_be_less_than_shipped_units: cannot be less than the number of shipped units.
       cannot_destroy_line_item_as_inventory_units_have_shipped: Cannot destroy line item as some inventory units have shipped.
       exceeds_available_stock: exceeds available stock. Please ensure line items have a valid quantity.
       is_too_large: is too large -- stock on hand cannot cover requested quantity!
       must_be_int: must be an integer
-      must_be_non_negative: must be a non-negative value
-    validity_period: Validity Period
-    value: Value
+      must_be_non_negative: non può essere un valore negativo
+    validity_period: Periodo di validità
+    value: Valore
     variant: Variante
     variant_placeholder: Scegli una variante
     variant_pricing: Prezzo Variante
     variant_properties: Proprietà della Variante
     variant_search: Ricerca Variante
-    variant_search_placeholder: "SKU or Option Value"
-    variant_to_add: Variant to add
-    variant_to_be_received: Variant to be received
+    variant_search_placeholder: "SKU oppure Opzione"
+    variant_to_add: Variante da aggiungere
+    variant_to_be_received: Variante da ricevere
     variants: Varianti
     version: Versione
-    void: Void
+    void: Annulla
     weight: Peso
-    what_is_a_cvv: What is a (CVV) Credit Card Codice?
+    what_is_a_cvv: Cos'è il codice CVV della Carta di Credito?
     what_is_this: What's This?
     width: Larghezza
     year: Anno
-    you_have_no_orders_yet: You have no orders yet
-    you_cannot_undo_action: You will not be able to undo this action
-    your_cart_is_empty: Your cart is empty
+    you_have_no_orders_yet: Non hai ancora ordini
+    you_cannot_undo_action: Non sarai in grado di annullare questa operazione
+    your_cart_is_empty: Carrello vuoto
     your_order_is_empty_add_product: "Il tuo ordine è vuoto, per favore cerca e aggiungi un prodotto"
     zip: CAP
     zipcode: Codice CAP
-    zone: Zone
-    zones: Zones
+    zone: Area Geografica
+    zones: Aree Geografiche
